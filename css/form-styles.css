@@ -1,0 +1,41 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header {
+    position: relative;
+    background: url('../image/background.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#header .center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+#header .formWrp {
+    background: #fff;
+    border-radius: 7px;
+    color: #3e485c;
+    padding: 15px;
+}
+
+#header .container input,
+#header .container textarea {
+    background: #ebecee;
+}
+
+#header .container button {
+    background: rgba(80, 121, 201, 1);
+    color: #fff;
+    padding: 12px 30px;
+}
+
+#header .description h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    color: #fff;
+}
