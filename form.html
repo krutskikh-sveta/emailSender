@@ -21,10 +21,16 @@
     Thank you for messaging.
 </div>
 
+<div class="alert alert-danger alert-dismissible hidden" id="failAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    Something went wrong.
+</div>
+
 <header id="header">
     <div class="center">
         <div class="container">
-            <form id="contactForm">
+            <form id="ajax_form" method="post" action="">
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-4">
@@ -61,7 +67,7 @@
                             </div>
                             <div class="text-right">
                                 <div class="button">
-                                    <button type="submit" class="button">Send</button>
+                                    <button type="submit" class="button" id="btn">Send</button>
                                 </div>
                             </div>
                         </div>
