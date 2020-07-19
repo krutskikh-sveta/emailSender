@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="weight=device-weight, initial-scale=1.0">
@@ -15,92 +15,63 @@
 </head>
 <body>
 
-<div class="alert alert-success hidden" id="successAlert" role="alert">Thank you for messaging.</div>
+<div class="alert alert-success alert-dismissible hidden" id="successAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    Thank you for messaging.
+</div>
 
 <header id="header">
     <div class="center">
         <div class="container">
-            <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-10">
-                    <div class="description">
-                        <h1>Send an email</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <form id="contactForm">
-                    <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-4">
-                            <div class="formWrp">
-                                <div class="form-group">
-                                    <label for="input_email">Email</label>
-                                    <input type="email" class="form-control" id="input_email"
-                                           aria-describedby="emailHelp"
-                                           placeholder="example@example.com"
-                                           name="email" required="required">
+            <form id="contactForm">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <div class="formWrp">
+                            <div class="description">
+                                <h1>Send an email</h1>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_email" class="control-label">Email</label>
+                                <input type="email" class="form-control" id="input_email"
+                                       aria-describedby="emailHelp"
+                                       placeholder="example@example.com"
+                                       name="email" required>
+                                <div class="help-block hidden" id="emailValidation">
+                                    Please provide a valid value.
                                 </div>
-                                <div class="form-group">
-                                    <label for="input_subject">Subject</label>
-                                    <input type="text" class="form-control" id="input_subject"
-                                           placeholder="Input your subject here" name="subject" required="required">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_subject" class="control-label">Subject</label>
+                                <input type="text" class="form-control" id="input_subject"
+                                       placeholder="Input your subject here" name="subject" required>
+                                <div class="help-block hidden" id="subjectValidation">
+                                    Please provide a valid value.
                                 </div>
-                                <div class="form-group">
-                                    <label for="input_message">Message</label>
-                                    <textarea class="form-control" id="input_message"
-                                              placeholder="Input your message here"
-                                              name="message" required="required"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_message" class="control-label">Message</label>
+                                <textarea class="form-control" id="input_message"
+                                          placeholder="Input your message here"
+                                          name="message" required rows="5"></textarea>
+                                <div class="help-block hidden" id="messageValidation">
+                                    Please provide a valid value.
                                 </div>
+                            </div>
+                            <div class="text-right">
                                 <div class="button">
                                     <button type="submit" class="button">Send</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2"></div>
                     </div>
-                </form>
-            </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
         </div>
     </div>
 </header>
-
-
-<script type="text/javascript">
-function submitForm(){
-
-<!--    $.ajax({-->
-<!--        type: "POST",-->
-<!--        url: "https://ey2cfmkmak.execute-api.eu-central-1.amazonaws.com/sendEmail",-->
-<!--        data: "name=" + 'Sasha' + "&email=" + 'example@ry.er' + "&message=" + 'message',-->
-<!--        success : function(text){-->
-<!--            if (text == "success"){-->
-<!--                formSuccess();-->
-<!--            }-->
-<!--        }-->
-<!--    });-->
-    formSuccess();
-}
-
-function formSuccess(){
-<!--    $( "#msgSubmit" ).removeClass( "hidden" );-->
-<!--alert('Hi')-->
-    $('#successAlert').toggleClass('hidden');
-}
-
-    $("#contactForm").submit(function(event){
-    event.preventDefault();
-    submitForm();
-});
-
-
-
-
-
-
-
-
-</script>
-
+<script src="js/alert_script.js"></script>
 </body>
 </html>
